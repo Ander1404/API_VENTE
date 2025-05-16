@@ -17,7 +17,7 @@ if (isset($_POST['id']) && is_numeric($_POST['id'])) {
     $id = (int) $_POST['id']; // on force un entier pour plus de sécurité
     $conn = $db->connect();
 
-    $stmt = $conn->prepare("SELECT * FROM `vdetailapprovisionnement` WHERE id_approvisionnement = :id");
+    $stmt = $conn->prepare("SELECT * FROM `vdetailapprovisionnement` WHERE approvisionnement_id = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
 
